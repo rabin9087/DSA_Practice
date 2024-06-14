@@ -2,10 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+
+    const navigatePage = [
+        {path: "/alphaNumericPalindrome", value: "AlphaNumericPalindrome"},
+        {path: "/alternativeStringArrange", value: "AlternativeStringArrange"},
+    ]
   return (
     <div>
-        <Link to={"/alphaNumericPalindrome"}>    AlphaNumericPalindrome
-        </Link>
+        {navigatePage.map(({path, value}, i) => (
+            <div key={i}>
+                <Link to={path}>
+                <span>{value}</span>
+                </Link>
+                
+            </div>
+        ))}
+        
     </div>
   )
 }
